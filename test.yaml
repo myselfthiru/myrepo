@@ -1,0 +1,16 @@
+---
+- name: Sample play book to check status
+  hosts: all
+  become: yes
+  tasks:
+         - name: To stop the goferd
+           service:
+                  name: goferd
+                  state: stoped
+
+	  - name: To remove the pkg
+            yum:
+		name:
+		     -katello-agent
+		     -qpid-proton-c
+ 		state: absent
