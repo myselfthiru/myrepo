@@ -1,0 +1,10 @@
+---
+ - name: Configure service account consistently 
+   hosts: all
+   become: true
+   tasks:
+     - name: Create user Oracle with UID 3001
+       user:
+         name: oracle
+         uid: 3001
+         state: present
